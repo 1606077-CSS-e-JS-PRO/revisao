@@ -1,8 +1,14 @@
 
 
+/* Altera cálculo de tamanho com b, m e p */
+* {
+    box-sizing: border-box;
+}
+
+
 .cabecalho {
     background: #DFE6ED;
-    padding: 10px;
+    padding: 5px;
 }
 
 .cabecalho__menu {
@@ -32,7 +38,6 @@ main {
 
 
 .container-formulario {
-    /* border: solid black 2px; */
     /* width: 200px; */
 }
 
@@ -41,22 +46,35 @@ main {
 }
 
 .container-formulario input {
-    /* border: solid black 2px; */
     display: block;
     width: 100%;
+    padding: 3px;
 }
 
 .container-formulario button {
     display: block;
     width: 100%;
+    border-radius: 2px;
 }
 
 .container-formulario button {
     display: block;
     width: 100%;
+    background-color: #4B5C6B;
+    color: white;
 }
 
 .status {
-    background-color: green;
+    padding: 5px;
+    text-align: center;
     width: 100%;
+    display: none;
+}
+
+.success {
+    background-color: #207868;
+}
+
+.error {
+    background-color: #AC6363;
 }
