@@ -1,0 +1,62 @@
+
+
+.cabecalho {
+    background: #DFE6ED;
+    padding: 10px;
+}
+
+.cabecalho__menu {
+    display: inline-block;
+}
+
+.cabecalho__menu a {
+    text-decoration: none;
+    color: white;
+    background-color: #4B5C6B;
+    padding: 7px;
+    border-radius: 5px;
+}
+
+.cabecalho__titulo {
+    display: inline-block;
+}
+
+body {
+    margin: 0;
+    background-color: #C3CFD9;
+}
+
+main {
+    padding: 20px;
+}
+
+
+.container-formulario {
+    /* border: solid black 2px; */
+    /* width: 200px; */
+}
+
+.container-formulario > * {
+    margin-top: 5px;
+}
+
+.container-formulario input {
+    /* border: solid black 2px; */
+    display: block;
+    width: 100%;
+}
+
+.container-formulario button {
+    display: block;
+    width: 100%;
+}
+
+.container-formulario button {
+    display: block;
+    width: 100%;
+}
+
+.status {
+    background-color: green;
+    width: 100%;
+}
