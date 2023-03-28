@@ -17,7 +17,8 @@ async function funcaoPrincipal() {
     const description = elBookDescription.value
 
     // Validacao
-    if (title == "" || description == "") {
+    // SE ENTAO - e &&, ou ||
+    if (title == "" /* V */  || description == "" /* F */) {
         const elementResp = document.getElementById("retornoErro")
         elementResp.style.display = "block"
         elementResp.innerHTML = "Faltou coisa ai!"
