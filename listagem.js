@@ -8,7 +8,7 @@ async function executaBuscaDeLivros() {
     // Processamento
     // Buscar os livros na api
     // Fetch
-    const url = "https://target-api-simples.cyclic.app/livros"
+    const url = "https://api-aula.up.railway.app/livros"
     const resposta = await fetch(url)
     const livros = await resposta.json()
 
@@ -17,9 +17,14 @@ async function executaBuscaDeLivros() {
 
     // Loop
     // let texto = construirListaDeCards(livros)
-    let tabela = construirTabela(livros)
+    // elementoResultado.innerHTML = texto
 
-    elementoResultado.innerHTML = texto
+    // let tabelaTexto = construirTabela(livros)
+    // elementoResultado.innerHTML = tabelaTexto
+
+    const tabelaElementos = construirTabelaComJSCreateElements(livros)
+    elementoResultado.innerHTML = "Livros"
+    elementoResultado.appendChild(tabelaElementos)
 }
 
 function construirListaDeCards(livros) {
@@ -70,4 +75,62 @@ function construirTabela(livros) {
     const tabelaCompleta = inicioTabela + linhasDoCorpo + fimTabela
 
     return tabelaCompleta
+}
+
+function construirTabelaComJSCreateElements(livros) {
+    // Cria os elementos principais da tabela
+    const tabela = document.createElement("table");
+    tabela.setAttribute("border", "2");
+
+    const thead = document.createElement("thead");
+    const tbody = document.createElement("tbody");
+
+    // Cria a linha do cabeçalho
+    const cabecalho = document.createElement("tr");
+
+    const thId = document.createElement("th");
+    thId.textContent = "ID";
+
+    const thTitulo = document.createElement("th");
+    thTitulo.textContent = "Título";
+
+    const thDescricao = document.createElement("th");
+    thDescricao.textContent = "Descrição";
+
+    // Adiciona os cabeçalhos à linha de cabeçalho
+    cabecalho.appendChild(thId);
+    cabecalho.appendChild(thTitulo);
+    cabecalho.appendChild(thDescricao);
+
+    // Adiciona a linha de cabeçalho ao thead
+    thead.appendChild(cabecalho);
+
+    // Cria as linhas do corpo da tabela
+    livros.forEach(livro => {
+        const linha = document.createElement("tr");
+
+        const tdId = document.createElement("td");
+        tdId.textContent = livro.id;
+
+        const tdTitulo = document.createElement("td");
+        tdTitulo.textContent = livro.title;
+
+        const tdDescricao = document.createElement("td");
+        tdDescricao.textContent = livro.description;
+
+        // Adiciona as células à linha
+        linha.appendChild(tdId);
+        linha.appendChild(tdTitulo);
+        linha.appendChild(tdDescricao);
+
+        // Adiciona a linha ao tbody
+        tbody.appendChild(linha);
+    });
+
+    // Monta a tabela
+    tabela.appendChild(thead);
+    tabela.appendChild(tbody);
+
+    // Retorna a tabela completa
+    return tabela;
 }

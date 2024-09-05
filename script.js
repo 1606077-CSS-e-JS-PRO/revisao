@@ -31,7 +31,7 @@ async function funcaoPrincipal() {
     // Processamento
     // Mandar title e description para API
     // e pegar o retorno da API
-    const url = "https://target-api-simples.cyclic.app/livros"
+    const url = "https://api-aula.up.railway.app/livros"
     const payload = {
         title: title,
         description: description
